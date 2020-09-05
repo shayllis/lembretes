@@ -13,6 +13,13 @@ const ReminderInput = (props) => {
         setLembrete(lembrete);
     };
 
+    const addReminder = () => {
+        // Verifica caracteres válidos
+        if (lembrete.replace(/\s+/g, '').length) {
+            props.onAddReminder(lembrete);
+        }
+    };
+
     return (
         <View style={styles.reminderView}>
             <TextInput
@@ -21,7 +28,7 @@ const ReminderInput = (props) => {
                 onChangeText={capturarLembrete}
                 value={lembrete}
             />
-            <Button title="Adicionar" onPress={() => props.onAddReminder(lembrete)}/>
+            <Button title="Adicionar" onPress={addReminder}/>
         </View>
     )
 }

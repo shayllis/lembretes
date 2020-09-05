@@ -4,7 +4,7 @@ import React from 'react';
 const ReminderItem = (props) => {
 
     return (
-        <TouchableOpacity onPress={() => props.onDelete(props.chave)}>
+        <TouchableOpacity onLongPress={() => props.onDelete(props.chave)}>
             <View style={styles.listItem}>
                 <Text>{props.lembrete}</Text>
             </View>
